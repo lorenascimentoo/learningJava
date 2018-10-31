@@ -3,30 +3,35 @@ package livraria;
 public class CadastroDeLivros {
 	public static void main(String[] args) {
 		Autor autor = new Autor();
-		autor.nomeDoAutor = "Rodrigo Turini";
-		autor.emailDoAutor ="rodrigo.turini@kh.com";
-		autor.cpf= "123.456.789.10";
+		autor.setNomeDoAutor("Rodrigo Turini");
+		autor.setEmailDoAutor("rodrigo.turini@kh.com");
+		autor.setCpf("123.456.789.10");
+	
 		
 		Livro livro = new Livro();
-		livro.nome = "Java 8 Prático";
-		livro.descricao = "Novos recursos da linguagem";
-		livro.valor = 59.90;
-		livro.aplicaDescontoDe(0.2);
-		livro.isbn = "978-85-66250-46-6";
-		livro.autor= autor;
+		livro.setNome("Java 8 Prático");
+		livro.setDescricao("Novos recursos da linguagem");
+		livro.setValor(59.90);
+		if (!livro.aplicaDescontoDe(0.2)) {
+			System.out.println("Desconto não pode ser maior que 30%");
+		} else {
+			System.out.println("Valor com desconto: " + livro.getValor());
+		}
+		livro.setIsbn("978-85-66250-46-6");
+		livro.setAutor(autor);
 		livro.mostrarDetalhes();
 		
 		Autor outroAutor = new Autor();
-		outroAutor.nomeDoAutor="Paulo Silveira";
-		outroAutor.emailDoAutor="paulo.silveira@kh.com";
-		outroAutor.cpf="123.456.789.10";
-		
+		outroAutor.setNomeDoAutor("Paulo Silveira");
+		outroAutor.setEmailDoAutor("paulo.silveira@kh.com");
+		outroAutor.setCpf("123.456.789.10");
+				
 		Livro outroLivro = new Livro();
-		outroLivro.nome = "Lógica de Programação";
-		outroLivro.descricao = "Crie seus primeiros programas";
-		outroLivro.valor = 59.90;
-		outroLivro.isbn="978-85-66250-22-0";
-		//outroLivro.autor = outroAutor;
+		outroLivro.setNome("Lógica de Programação");
+		outroLivro.setDescricao("Crie seus primeiros programas");
+		outroLivro.setValor(59.90);
+		outroLivro.setIsbn("978-85-66250-22-0");
+		outroLivro.setAutor(outroAutor);
 		outroLivro.mostrarDetalhes();
 	}
 }
