@@ -32,6 +32,15 @@ public class Livro {
 		return this.autor != null;
 	}
 	
+	public Livro(Autor autor) {
+		this();
+		this.autor = autor;
+	}
+	
+	public Livro() {
+		this.isbn ="000-00-00000-00-0";
+	}
+	
 	//atibuição de valores
 	void setValor(double valor) {
 		this.valor = valor;
