@@ -2,13 +2,15 @@ package livraria;
 
 public class RegrasDeDesconto {
 	public static void main(String[] args) {
-		Livro livro= new Livro();
-		livro.setValor(59.90);
+		Autor autor = new Autor();
+		autor.setNomeDoAutor("Rodrigo Turini");
+		Livro livro= new MiniLivro(autor);
+		livro.setValor(39.90);
 		
 		System.out.println("Valor atual: "+livro.getValor());
 		
-		if (!livro.aplicaDescontoDe(0.3)) {
-			System.out.println("Desconto não pode ser maior do que 30%");
+		if (!livro.aplicaDescontoDe(0.40)) {
+			System.out.println(" --- ");
 		} else {
 			System.out.println("Valor com desconto: "+livro.getValor());
 		}

@@ -22,8 +22,12 @@ public class Ebook extends Livro{
 	public boolean aplicaDescontoDe(double porcentagem) {
 		
 		if (porcentagem > 0.15) {
+			System.out.println("Não foi possível aplicar desconto no Ebook: porcentagem máxima de 15%");
 			return false;
 		}
-		return super.aplicaDescontoDe(porcentagem);
+		double desconto = getValor() * porcentagem;
+		setValor(getValor()- desconto);
+		System.out.println("Aplicando desconto no Ebook");
+		return true;
 	}
 }
