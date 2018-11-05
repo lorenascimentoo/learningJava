@@ -9,11 +9,5 @@ public class RegrasDeDesconto {
 		
 		System.out.println("Valor atual: "+livro.getValor());
 		
-		if (!livro.aplicaDescontoDe(0.40)) {
-			System.out.println(" --- ");
-		} else {
-			System.out.println("Valor com desconto: "+livro.getValor());
-		}
-		
 	}
 }
