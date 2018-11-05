@@ -1,11 +1,11 @@
-package livraria;
+package br.com.casadocodigo.livraria;
 
 public class Autor {
 	private String nomeDoAutor;
 	private String emailDoAutor;
 	private String cpf;
 	
-	void mostrarDetalhes() {
+	public void mostrarDetalhes() {
 		System.out.println("Mostrando detalhes do Autor");
 		System.out.println("Nome : "+nomeDoAutor);
 		System.out.println("Email: "+emailDoAutor);
