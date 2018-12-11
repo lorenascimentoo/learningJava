@@ -27,12 +27,14 @@ public abstract class Livro implements Produto{
 	}
 	
 	public Livro(Autor autor) {
-		this();
+		if (autor == null) {
+			throw new RuntimeException("O autor do livro não pode ser nulo!");
+		}
 		this.autor = autor;
-	}
-	
-	public Livro() {
 		this.isbn ="000-00-00000-00-0";
+	}
+	public Livro() {
+		
 	}
 	
 	//atibuição de valores
