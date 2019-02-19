@@ -1,35 +1,35 @@
 package br.com.casadocodigo.livraria.teste;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import br.com.casadocodigo.livraria.produtos.Produto;
 
 public class CarrinhoDeCompras {
 	private double total;
-	private Produto[] produtos = new Produto[10];
-	private int contador = 0;
+	private List<Produto> produtos;
 	
-	public void adiciona(Produto produto) {
-		System.out.println("Adicionando: "+produto);
-		this.produtos[contador]=produto;
-		contador++;
-		this.total += produto.getValor();
+	public CarrinhoDeCompras() {
+		this.produtos = new ArrayList<>();
 	}
 	
+	public void adiciona(Produto produto) {
+		this.produtos.add(produto);
+	}
+	
+	public void remove(int posicao) {
+		this.produtos.remove(posicao);
+	}
+		
 	public double getTotal() {
 		return total;
 	}
-
-	public void getProdutos() {
-		for (Produto produto : produtos) {
-			try {
-			if(produto != null) {
-				System.out.println(produto.getValor());
-				}
-			} catch (ArrayIndexOutOfBoundsException e){
-				System.out.println("deu exception no índice");
-				e.printStackTrace();
-			}
-		}
-		System.out.println("Fui executado!");
-	}
 	
+	public List<Produto> getProdutos(){
+		for (Produto produto: produtos) {
+			System.out.println(produto);
+		}
+		return produtos;
+	}
+
 }

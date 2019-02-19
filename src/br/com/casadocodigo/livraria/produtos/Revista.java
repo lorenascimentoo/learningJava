@@ -18,6 +18,9 @@ public class Revista implements Produto, Promocional {
 	public void setValor(double valor) {
 		this.valor = valor;
 	}	
+	public void setEditora(Editora editora) {
+		this.editora = editora;
+	}
 	
 	//retorno de valores
 	public String getNome() {
@@ -29,6 +32,9 @@ public class Revista implements Produto, Promocional {
 	public double getValor() {
 		return valor;
 	}
+	public Editora getEditora() {
+		return editora;
+	}
 		
 	public boolean aplicaDescontoDe(double porcentagem) {
 		if(porcentagem>0.1) {
@@ -37,6 +43,17 @@ public class Revista implements Produto, Promocional {
 		double desconto = getValor() * porcentagem;
 		setValor(getValor()-desconto);
 		return true;
+	}
+	
+	@Override
+	public int compareTo(Produto outro) {
+		if(this.getValor() < outro.getValor()) {
+			return -1;
+		}
+		if(this.getValor() > outro.getValor()) {
+			return 1;
+		}
+		return 0;
 	}
 	
 }
